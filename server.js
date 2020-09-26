@@ -1,4 +1,4 @@
-
+require("dotenv").config();
 var express = require("express");
 var twitter_route = require("./routes/twitter_route");
 
@@ -26,14 +26,13 @@ router.get("/", function (req, res) {
     message: "welcome to Twitter Service",
   });
 });
-// route to handle tweet search
+// route to search tweets
 router.get("/search_tweet", twitter_route.search);
-// route to login
+// route to post tweet
 router.post("/post_tweet", twitter_route.post);
-// route to token login
+// route to delete tweet
 router.post("/delete_tweet", twitter_route.delete);
-// route to forgot
 
 // port added
-app.listen(process.env.PORT || 443);
-console.log("listening on port:" + (process.env.PORT || 443));
+app.listen(process.env.PORT || 3000);
+console.log("listening on port:" + (process.env.PORT || 3000));
