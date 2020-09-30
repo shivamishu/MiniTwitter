@@ -26,6 +26,7 @@ exports.search = async function (req, res) {
     function (err, data, _result) {
       if (err) {
         console.log(err);
+        throw new Error(err);
       } else {
         console.log(data);
       }
@@ -46,6 +47,7 @@ exports.post = async function (req, res) {
     function (err, data, result) {
       if (err) {
         console.log(err);
+        throw new Error(err);
       } else {
         console.log(data);
       }
@@ -57,6 +59,7 @@ exports.post = async function (req, res) {
 //Delete a Tweet
 exports.delete = async function (req, res) {
   console.log("Deleting a Tweet");
+  console.log(delete_endpoint + req.body.id + ".json");
   oauth.post(
     delete_endpoint + req.body.id + ".json",
     process.env.USER_ACCESS_TOKEN,
@@ -66,10 +69,11 @@ exports.delete = async function (req, res) {
     function (err, data, result) {
       if (err) {
         console.log(err);
+        res.sendStatus(err.statusCode);
       } else {
         console.log(data);
+        res.send(data);
       }
-      res.send(data);
     }
   );
 };

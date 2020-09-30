@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twitter Service - Cloud Bond</title>
+    <link
+      rel="shortcut icon"
+      href="https://abs.twimg.com/favicons/twitter.ico"
+    />
+    <script
+      id="sap-ui-bootstrap"
+      src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+      data-sap-ui-preload=""
+      data-sap-ui-theme="sap_fiori_3"
+      data-sap-ui-resourceroots='{"sjsu.TwitterAPI": "./"}'
+      data-sap-ui-compatVersion="edge"
+      data-sap-ui-xx-bindingSyntax="complex"
+      data-sap-ui-async="true"
+      data-sap-ui-frameOptions="trusted"
+      data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
+    ></script>
+
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body class="sapUiBody sapUiSizeCozy" id="content">
+    <div
+      data-sap-ui-component
+      data-name="sjsu.TwitterAPI"
+      data-height="100%"
+      data-id="container"
+      data-settings='{"id" : "TwitterAPI"}'
+      style="height: 100%"
+    ></div>
+  </body>
+</html>

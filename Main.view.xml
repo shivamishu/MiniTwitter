@@ -1,0 +1,19 @@
+<mvc:View controllerName="sjsu.TwitterAPI.Main" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<l:VerticalLayout class="sapUiContentPadding" width="100%">
+		<l:content>
+			<VBox alignItems="Center">
+				<Title text="Twitter Service by Cloud Bond" style="H1" class="sapUiTinyMargin"/>
+			</VBox>
+			<FeedInput post="onPost" placeholder="What's happening? Post something here."
+				icon="https://pbs.twimg.com/profile_images/1309501353417302018/lBW2Pmbt_400x400.jpg" class="sapUiSmallMarginTopBottom"/>
+			<SearchField id="searchTweet" search="handleTweetSearch" width="20rem" placeholder="Search Tweets by Account"/>
+			<List headerText="{ path: 'mainModel>/results/statuses', formatter: '.formatCount'}" noDataText="No Tweets available. Search with a different account name" items="{mainModel>/results/statuses}">
+				<FeedListItem sender="{mainModel>user/name}" icon="{mainModel>user/profile_image_url_https}" senderPress="onPress" iconPress="onPress"
+					iconDensityAware="false" info="{mainModel>user/screen_name}" timestamp="{path: 'mainModel>created_at', formatter: '.formatDate'}"
+					text="{mainModel>text}" convertLinksToAnchorTags="All" actions="{mainModel>/delete}">
+					<FeedListItemAction text="Delete" icon="sap-icon://delete" key="delete" press="onDeletePressed"/>
+				</FeedListItem>
+			</List>
+		</l:content>
+	</l:VerticalLayout>
+</mvc:View>

@@ -1,0 +1,29 @@
+{
+  "sap.app": {
+    "id": "sjsu.TwitterAPI",
+    "applicationVersion": {
+      "version": "1.0.0"
+    }
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "sjsu.TwitterAPI.Main",
+      "type": "XML",
+      "async": true
+    },
+    "dependencies": {
+      "libs": {
+        "sap.ui.layout": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "config": {
+      "sample": {
+        "files": ["Main.view.xml", "Main.controller.js", "manifest.json"]
+      }
+    }
+  }
+}
