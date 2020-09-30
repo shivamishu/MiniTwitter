@@ -11,7 +11,7 @@ Create .env file in the root directory and maintain these credentials.
 TWITTER_API_KEY=  
 TWITTER_API_SECRET=  
 USER_ACCESS_TOKEN=  
-USER_ACCESS_SECRET=
+USER_ACCESS_SECRET=  
 ACCOUNT=
 
 run cmd commands:  
