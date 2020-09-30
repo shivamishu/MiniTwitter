@@ -9,6 +9,18 @@ sap.ui.define(
     var ACCOUNT = "SampleDevAccess";
     var MainController = Controller.extend("sjsu.TwitterAPI.Main", {
       onInit: function () {
+        $.ajax({
+          type: "GET",
+          contentType: "application/json",
+          url: "/api",
+          dataType: "json",
+          success: function (data) {
+            ACCOUNT = data.account ? data.account : "SampleDevAccess";
+          },
+          error: function (error) {
+            console.log("Error during init");
+          },
+        });
         var oModel = new JSONModel({
           results: { statuses: [] },
           busy: false,

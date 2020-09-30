@@ -23,6 +23,7 @@ app.use("/api", router);
 router.get("/", function (req, res) {
   console.log("default route called");
   res.json({
+    account: process.env.ACCOUNT,
     message: "welcome to Twitter Service",
   });
 });
