@@ -37,3 +37,6 @@ http://localhost:3000/api/delete_tweet
 
 body  
 {"id" :"1309885102650843136"}
+
+# Test
+For testing we need to run below command: npm run test
