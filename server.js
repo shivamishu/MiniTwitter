@@ -1,3 +1,4 @@
+/* File Authored by Shivam Shrivastav */
 require("dotenv").config();
 var express = require("express");
 var twitter_route = require("./routes/twitter_route");
@@ -7,11 +8,7 @@ var bodyParser = require("body-parser");
 let cors = require("cors");
 var app = express();
 app.use(express.static(__dirname));
-app.use(
-  bodyParser.urlencoded({
-    extended: true,
-  })
-);
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 // Allow cross origin requests
 app.use(cors());
@@ -21,11 +18,8 @@ app.use("/api", router);
 
 // test route
 router.get("/", function (req, res) {
-  console.log("default route called");
-  res.json({
-    account: process.env.ACCOUNT,
-    message: "welcome to Twitter Service",
-  });
+    console.log("default route called");
+    res.json({account: process.env.ACCOUNT, message: "welcome to Twitter Service"});
 });
 // route to search tweets
 router.get("/search_tweet", twitter_route.search);
@@ -36,5 +30,7 @@ router.post("/delete_tweet", twitter_route.delete);
 
 // port added
 app.listen(process.env.PORT || 3000);
-console.log("listening on port:" + (process.env.PORT || 3000));
+console.log("listening on port:" + (
+    process.env.PORT || 3000
+));
 module.exports = app; // for testing
